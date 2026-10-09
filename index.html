@@ -93,26 +93,28 @@
     }
     .bar > span { display: block; height: 100%; background: linear-gradient(90deg, #FEEFA8, #8D0026); }
     #map-wrap { position: relative; height: 100%; width: 100%; min-height: 0; }
-    #map { height: 100%; width: 100%; background: #0b1018; }
+    #map { height: 100%; width: 100%; background: #f2f2f2; }
     .leaflet-container { cursor: grab; }
     .leaflet-container.leaflet-dragging, .leaflet-dragging .leaflet-container { cursor: grabbing; }
     .leaflet-interactive { cursor: pointer; }
-    #map-wrap:fullscreen { width: 100vw; height: 100vh; background: #0b1018; }
-    #map-wrap:-webkit-full-screen { width: 100vw; height: 100vh; background: #0b1018; }
+    #map-wrap:fullscreen { width: 100vw; height: 100vh; background: #f2f2f2; }
+    #map-wrap:-webkit-full-screen { width: 100vw; height: 100vh; background: #f2f2f2; }
     #map-wrap.pseudo-fs { position: fixed; inset: 0; z-index: 3000; width: 100vw; height: 100vh; }
     .view-ctrl a {
       font-size: 16px; font-weight: 700; line-height: 30px; text-align: center;
       color: #1a2332; text-decoration: none; cursor: pointer;
     }
     .legend {
-      background: rgba(26,35,50,0.96); color: var(--text); padding: 10px 12px;
-      border-radius: 8px; border: 1px solid var(--border); font-size: 0.78rem; line-height: 1.3;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+      background: rgba(255,255,255,0.97); color: #333333; padding: 10px 12px;
+      border-radius: 8px; border: 1px solid #bdbdbd; font-size: 0.78rem; line-height: 1.3;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.18);
     }
+    .legend .sub { color: #555555; }
+    .legend .warn { color: #8a5a00; }
     .legend .title { font-weight: 600; margin-bottom: 6px; }
     .legend i {
-      width: 14px; height: 14px; float: left; margin-right: 8px; opacity: 0.95;
-      border: 1px solid rgba(255,255,255,0.15);
+      width: 14px; height: 14px; float: left; margin-right: 8px; opacity: 1;
+      border: 1px solid #555555;
     }
 
     .btn-method {
@@ -77853,7 +77855,7 @@
       maxBounds: DK_MAX_BOUNDS,
       maxBoundsViscosity: 0.8,
     }).setView([56.1, 10.2], 7);
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
       attribution: 'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors',
       maxZoom: 16,
     }).addTo(map);
@@ -78005,6 +78007,13 @@
     });
 
     const COLORS = ["#FEEFA8", "#FDD06C", "#FC9B42", "#FB4D2A", "#D3101F", "#8D0026"];
+    // Paper style (Postcode Lottery Fig. 10): opaque fills, dark-grey outlines, light basemap.
+    const NO_DATA_FILL = '#BFBFBF';      // no data / not yet filed: neutral grey, outside the ramp
+    const OUTLINE = '#555555';
+    const OUTLINE_W = 1;
+    const SELECT_OUTLINE = '#111111';
+    // Colour breaks are data-driven (niceBreaks): recomputed from the values shown for the
+    // selected class / metric / year range on every refresh; palest = cheapest, darkest = dearest.
 
     function humanStatus(raw) {
       if (raw === null || raw === undefined || raw === '') return '—';
@@ -78506,56 +78515,53 @@
     }
 
     /**
-     * Choropleth edges: quantile anchors rounded to nice steps that still cover [min, max].
-     * One shared array drives both polygon colours and legend labels (truthful bins).
+     * Choropleth breaks, data-driven (same method for every class / metric / year range, recomputed
+     * on each refresh). breaks[k] is the LOWER edge of colour k (6 colours):
+     *   breaks[0] = minimum; breaks[k] (k = 1..5) = k/6 quantile (sextile) of the values shown,
+     *   rounded to a nice 1/2/5×10^n step ≈ 1/10 of the inter-sextile span (q5/6 − q1/6).
+     * So each colour holds about one sixth of the DSOs, the palest the cheapest sixth and the
+     * darkest the most expensive sixth. Edges are forced strictly increasing (+1 step on ties).
+     * One shared array drives polygon colours and legend labels (truthful bins).
      */
     function niceBreaks(vals) {
       const s = [...vals].filter(v => v !== null && v !== undefined && isFinite(Number(v)))
         .map(Number).sort((a, b) => a - b);
       if (!s.length) return null;
       const nStops = COLORS.length;
-      const vmin = s[0];
-      const vmax = s[s.length - 1];
-      if (vmin === vmax) {
-        const step = niceStepForSpan(Math.abs(vmin) || 1) || 1;
-        const base = Math.floor(vmin / step) * step;
-        return Array.from({ length: nStops }, (_, i) => base + i * step);
+      const uniq = [...new Set(s)];
+      if (uniq.length < nStops) {
+        // Fewer distinct values than colours (e.g. a 2027 metric with one filer): one bin per
+        // value, colours spread over the ramp so the cheapest is palest and the dearest darkest.
+        const out = uniq.slice();
+        out.colors = uniq.map((_, k) => COLORS[uniq.length === 1 ? nStops - 1 : Math.round(k * (nStops - 1) / (uniq.length - 1))]);
+        out.step = null; out.n = s.length; out.exact = true;
+        return out;
       }
-      const raw = quantiles(s);
-      const step = niceStepForSpan(vmax - vmin);
-      let breaks = raw.map((v, i) => {
-        if (i === 0) return Math.floor(v / step) * step;
-        if (i === raw.length - 1) return Math.ceil(v / step) * step;
-        return Math.round(v / step) * step;
-      });
-      for (let i = 1; i < breaks.length; i++) {
-        if (breaks[i] <= breaks[i - 1]) breaks[i] = breaks[i - 1] + step;
+      const q = p => {                     // linear-interpolated quantile
+        const x = p * (s.length - 1), lo = Math.floor(x), hi = Math.ceil(x);
+        return s[lo] + (s[hi] - s[lo]) * (x - lo);
+      };
+      const inner = q((nStops - 1) / nStops) - q(1 / nStops);
+      const span = inner > 0 ? inner : (s[s.length - 1] - s[0]) || Math.abs(s[0]) || 1;
+      const step = niceStepForSpan(span / 2);   // niceStepForSpan(x) ≈ x/5 → ≈ span/10
+      const out = [s[0]];
+      for (let k = 1; k < nStops; k++) {
+        let e = Math.round(q(k / nStops) / step) * step;
+        if (e <= out[k - 1]) e = (k === 1 ? Math.floor(out[0] / step) * step : out[k - 1]) + step;
+        out.push(e);
       }
-      while (breaks[0] > vmin) breaks[0] -= step;
-      while (breaks[breaks.length - 1] < vmax) breaks[breaks.length - 1] += step;
-      // Keep length === colour stops (drop mid duplicates only if we somehow overshot)
-      if (breaks.length > nStops) {
-        const out = [breaks[0]];
-        for (let i = 1; i < nStops - 1; i++) {
-          const idx = Math.round(i * (breaks.length - 1) / (nStops - 1));
-          out.push(breaks[idx]);
-        }
-        out.push(breaks[breaks.length - 1]);
-        breaks = out;
-        for (let i = 1; i < breaks.length; i++) {
-          if (breaks[i] <= breaks[i - 1]) breaks[i] = breaks[i - 1] + step;
-        }
-      }
-      return breaks;
+      out.step = step; out.n = s.length;
+      return out;
     }
 
     function colorScale(breaks) {
       return function (v) {
-        if (v === null || v === undefined || !breaks) return '#3a4558';
+        if (v === null || v === undefined || !breaks) return NO_DATA_FILL;
+        const cols = breaks.colors || COLORS;
         for (let i = breaks.length - 1; i >= 0; i--) {
-          if (v >= breaks[i]) return COLORS[Math.min(i, COLORS.length - 1)];
+          if (v >= breaks[i]) return cols[Math.min(i, cols.length - 1)];
         }
-        return COLORS[0];
+        return cols[0];
       };
     }
 
@@ -79118,26 +79124,32 @@
         const div = L.DomUtil.create('div', 'legend');
         const fm = filedMode();
         let html = fm
-          ? `<div class="title">${esc(FILED_LABEL)} · ${esc(meta.label)}</div><div style="color:#e0b84a;margin:-2px 0 4px">Datahub filings as of ${esc(FILED_ASOF)}</div>`
+          ? `<div class="title">${esc(FILED_LABEL)} · ${esc(meta.label)}</div><div class="warn" style="margin:-2px 0 4px">Datahub filings as of ${esc(FILED_ASOF)}</div>`
           : `<div class="title">${rangeLabel()} · ${meta.label}</div>`;
         if (!breaks) {
           html += fm ? '<div>No DSO has filed every part needed for this metric yet</div>' : '<div>No values for this class / range</div>';
-          if (fm) html += `<div><i style="background:#3a4558"></i> Not yet filed / component missing (${filedCountsForSelection().missing})</div>`;
+          if (fm) html += `<div><i style="background:${NO_DATA_FILL}"></i> Not yet filed / component missing (${filedCountsForSelection().missing})</div>`;
         } else {
-          for (let i = 0; i < COLORS.length; i++) {
+          if (breaks.exact) {
+            breaks.forEach((v, i) => { html += `<div><i style="background:${breaks.colors[i]}"></i> ${esc(fmt(v))}${u}</div>`; });
+          } else for (let i = 0; i < COLORS.length; i++) {
             const from = breaks[Math.min(i, breaks.length - 1)];
             const to = breaks[Math.min(i + 1, breaks.length - 1)];
-            const label = i === COLORS.length - 1
-              ? `≥ ${fmtLegend(from)}${u}`
-              : `${fmtLegend(from)} – ${fmtLegend(to)}${u}`;
+            const label = i === 0
+              ? `&lt; ${fmtLegend(to)}${u}`
+              : i === COLORS.length - 1
+                ? `≥ ${fmtLegend(from)}${u}`
+                : `${fmtLegend(from)} – ${fmtLegend(to)}${u}`;
             html += `<div><i style="background:${COLORS[i]}"></i> ${label}</div>`;
           }
           if (fm) {
             const fc = filedCountsForSelection();
-            html += `<div><i style="background:#3a4558"></i> Not yet filed / component missing (${fc.missing})</div>`;
-            html += `<div style="margin-top:6px;color:#9aa8bc">Bins from filed values only${esc(unit)} (${fc.withValue} DSO${fc.withValue === 1 ? "" : "s"}). Not comparable to a full year if a filing is part-year.</div>`;
+            html += `<div><i style="background:${NO_DATA_FILL}"></i> Not yet filed / component missing (${fc.missing})</div>`;
+            html += `<div class="sub" style="margin-top:6px">${breaks.exact ? 'One colour per filed value' : 'Sextile bins from filed values only'}${esc(unit)} (${fc.withValue} DSO${fc.withValue === 1 ? "" : "s"}). Not comparable to a full year if a filing is part-year.</div>`;
           } else {
-            html += `<div style="margin-top:6px;color:#9aa8bc">Nice round colour bins${esc(unit)}; cell values stay exact. Grey = no usable data</div>`;
+            html += breaks.exact
+              ? `<div class="sub" style="margin-top:6px">Only ${breaks.length} distinct value${breaks.length === 1 ? '' : 's'} shown${esc(unit)}: one colour per value, palest = cheapest. Grey = no usable data</div>`
+              : `<div class="sub" style="margin-top:6px">Bins from the values shown${esc(unit)}: sextiles of ${breaks.n} map area${breaks.n === 1 ? '' : 's'} rounded to ${fmtLegend(breaks.step)}; palest = cheapest, darkest = most expensive. Cell values stay exact. Grey = no usable data</div>`;
           }
         }
         div.innerHTML = html;
@@ -79151,11 +79163,11 @@
       const active = isPolygonActive(jk);
       if (!active) {
         return {
-          fillColor: '#2a3140',
+          fillColor: '#e6e6e6',
           weight: 0.6,
-          opacity: 0.5,
-          color: '#4a5568',
-          fillOpacity: 0.15,
+          opacity: 0.8,
+          color: '#888888',
+          fillOpacity: 0.6,
           dashArray: '4 3',
         };
       }
@@ -79163,21 +79175,21 @@
       const fill = colorScale(breaks)(v);
       const selected = activeJoin && activeJoin === jk;
       const cmpStroke = compareStroke(jk);
-      let weight = 0.8;
-      let color = '#1b2433';
+      let weight = OUTLINE_W;
+      let color = OUTLINE;
       if (cmpStroke) {
         weight = selected ? 3.2 : 2.6;
         color = cmpStroke;
       } else if (selected) {
-        weight = 2.5;
-        color = '#ffe08a';
+        weight = 3;
+        color = SELECT_OUTLINE;
       }
       return {
         fillColor: fill,
         weight,
         opacity: 1,
         color,
-        fillOpacity: v === null ? 0.35 : 0.78,
+        fillOpacity: 1,
       };
     }
 
@@ -79298,7 +79310,7 @@
           const pr = polygonRule(jk);
           layer.on({
             mouseover: e => {
-              e.target.setStyle({ weight: 2, color: '#fff' });
+              e.target.setStyle({ weight: 2.5, color: SELECT_OUTLINE });
               e.target.bringToFront();
             },
             mouseout: e => { geoLayer.resetStyle(e.target); },
@@ -79478,7 +79490,7 @@
         const meta = metricMeta();
         let h = `<div style="font-weight:600;color:var(--text);margin-bottom:4px">Not yet filed or incomplete for ${FILED_YEAR} (${missing.length}) <span style="font-weight:400;color:#9fb3cc">· ${esc(classSelect.value)} · ${esc(meta.label)}</span></div>`;
         if (!rows.length) h = `<div style="margin-bottom:6px">No DSO has filed every part needed for <b>${esc(meta.label)}</b> (${esc(classSelect.value)}) yet.</div>` + h;
-        h += missing.map(({ o, b }) => `<div class="nf-row" data-join="${esc(o.join_key || '')}" style="padding:3px 0;cursor:pointer"><span style="display:inline-block;width:9px;height:9px;background:#3a4558;border-radius:2px;margin-right:6px"></span>${esc(ownerDisplayName(o))}<div style="margin-left:15px;color:#7f93ad">${esc(filedShortNote(b))}</div></div>`).join('');
+        h += missing.map(({ o, b }) => `<div class="nf-row" data-join="${esc(o.join_key || '')}" style="padding:3px 0;cursor:pointer"><span style="display:inline-block;width:9px;height:9px;background:${NO_DATA_FILL};border-radius:2px;margin-right:6px"></span>${esc(ownerDisplayName(o))}<div style="margin-left:15px;color:#7f93ad">${esc(filedShortNote(b))}</div></div>`).join('');
         box.innerHTML = h;
         box.querySelectorAll('.nf-row').forEach(el => {
           el.addEventListener('click', () => {
@@ -79626,8 +79638,9 @@
 
 
     /* ================= Investment outlook layer ================= */
-    const INV_COLORS = ['#dadaeb', '#bcbddc', '#9e9ac8', '#756bb1', '#54278f'];
-    const INV_NONE = '#3a4558';
+    // Paper ramp (yellow -> maroon), 5 bands low -> high; grey = no plan on file.
+    const INV_COLORS = ['#FEEFA8', '#FDD06C', '#FC9B42', '#D3101F', '#8D0026'];
+    const INV_NONE = NO_DATA_FILL;
     // Polygons/owners of the latest tariff year (not the filed year), i.e. current borders.
     const INV_GEO_YEAR = (() => {
       const ys = (tariffs.years || []).map(Number).filter(y => !FILED_YEAR || y !== FILED_YEAR);
@@ -79686,10 +79699,10 @@
       const selected = activeJoin && activeJoin === jk;
       return {
         fillColor: invColor(d),
-        weight: selected ? 2.5 : 0.8,
+        weight: selected ? 3 : OUTLINE_W,
         opacity: 1,
-        color: selected ? '#ffe08a' : '#1b2433',
-        fillOpacity: d ? 0.85 : 0.35,
+        color: selected ? SELECT_OUTLINE : OUTLINE,
+        fillOpacity: 1,
         dashArray: (invArea(jk) && invArea(jk).status === 'parent') ? '3 2' : null,
       };
     }
@@ -79706,7 +79719,7 @@
             ? (invArea(jk).status === 'parent' ? 'covered by ' + esc(d.name) + "'s plan · " : '') + esc(fmtX(d.ratio_to_median)) + ' median · ' + esc(fmtInt(d.per_meter_dkk_10y)) + '\u00a0kr per meter (10\u00a0yr)'
             : 'No plan on file'}`, { sticky: true });
           layer.on({
-            mouseover: e => { e.target.setStyle({ weight: 2, color: '#fff' }); e.target.bringToFront(); },
+            mouseover: e => { e.target.setStyle({ weight: 2.5, color: SELECT_OUTLINE }); e.target.bringToFront(); },
             mouseout: e => { geoLayer.resetStyle(e.target); },
             click: () => { activeJoin = jk; restyleInvest(); highlightList(jk); showInvestDetail(jk, feature.properties); },
           });
@@ -79738,12 +79751,12 @@
         const div = L.DomUtil.create('div', 'legend');
         const c = invCounts();
         let h = `<div class="title">Investment outlook · plans ${esc(invest.plan_period)}</div>
-          <div style="color:#cbc9e2;margin:-2px 0 4px">Planned 10-yr capex per meter ÷ national median<br>(median ${esc(fmtInt(invest.national_median_per_meter_dkk_10y))}\u00a0kr per meter)</div>`;
+          <div class="sub" style="margin:-2px 0 4px">Planned 10-yr capex per meter ÷ national median<br>(median ${esc(fmtInt(invest.national_median_per_meter_dkk_10y))}\u00a0kr per meter)</div>`;
         (invest.bands || []).forEach((b, i) => {
           h += `<div><i style="background:${INV_COLORS[i]}"></i> ${esc(b.range)} ${esc(b.label.toLowerCase())} (${c.bands[b.id] || 0} DSOs)</div>`;
         });
         h += `<div><i style="background:${INV_NONE}"></i> No plan on file (${c.none} area${c.none === 1 ? '' : 's'})</div>`;
-        h += `<div style="margin-top:6px;color:#9aa8bc">Dashed border = area covered by its parent DSO's plan (${c.parent}).<br><b style="color:#e0b84a">Investment plans (drafts), not tariffs.</b></div>`;
+        h += `<div class="sub" style="margin-top:6px">Dashed border = area covered by its parent DSO's plan (${c.parent}).<br><b class="warn">Investment plans (drafts), not tariffs.</b></div>`;
         div.innerHTML = h;
         return div;
       };
