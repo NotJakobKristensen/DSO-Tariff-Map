@@ -94,7 +94,16 @@
     .bar > span { display: block; height: 100%; background: linear-gradient(90deg, #FEEFA8, #8D0026); }
     #map-wrap { position: relative; height: 100%; width: 100%; min-height: 0; }
     #map { height: 100%; width: 100%; background: #0b1018; }
-    .leaflet-container { cursor: default !important; }
+    .leaflet-container { cursor: grab; }
+    .leaflet-container.leaflet-dragging, .leaflet-dragging .leaflet-container { cursor: grabbing; }
+    .leaflet-interactive { cursor: pointer; }
+    #map-wrap:fullscreen { width: 100vw; height: 100vh; background: #0b1018; }
+    #map-wrap:-webkit-full-screen { width: 100vw; height: 100vh; background: #0b1018; }
+    #map-wrap.pseudo-fs { position: fixed; inset: 0; z-index: 3000; width: 100vw; height: 100vh; }
+    .view-ctrl a {
+      font-size: 16px; font-weight: 700; line-height: 30px; text-align: center;
+      color: #1a2332; text-decoration: none; cursor: pointer;
+    }
     .legend {
       background: rgba(26,35,50,0.96); color: var(--text); padding: 10px 12px;
       border-radius: 8px; border: 1px solid var(--border); font-size: 0.78rem; line-height: 1.3;
@@ -440,9 +449,12 @@
             <label for="classSelect">Customer class</label>
             <span class="info" tabindex="0" aria-label="About customer class">i
               <span class="tip">Voltage / size band used for annual bill calculations.<br>
-                Assumed yearly consumption (kWh):<br>
-                <b>C</b> 4&nbsp;000 · <b>B lav</b> 100&nbsp;000 · <b>B høj</b> 500&nbsp;000<br>
-                <b>A lav</b> 2&nbsp;000&nbsp;000 · <b>A høj</b> 10&nbsp;000&nbsp;000<br>
+                Assumed yearly consumption:<br>
+                <b>C</b> 4,000&nbsp;kWh/year<br>
+                <b>B lav</b> 100,000&nbsp;kWh/year<br>
+                <b>B høj</b> 500,000&nbsp;kWh/year<br>
+                <b>A lav</b> 2,000,000&nbsp;kWh/year<br>
+                <b>A høj</b> 10,000,000&nbsp;kWh/year<br>
                 Equal-hour load profile (method A).</span>
             </span>
           </div>
@@ -453,8 +465,8 @@
             <label for="metricSelect">Metric</label>
             <span class="info" tabindex="0" aria-label="About metric">i
               <span class="tip"><b>Netpris incl. VAT</b> — total annual network bill including 25% Danish VAT (DKK/year).<br>
-                <b>Volumetric ex VAT</b> — energy-related charge only, excluding VAT.<br>
-                <b>Subscription (abo) ex VAT</b> — fixed annual subscription, excluding VAT.<br>
+                <b>Volumetric ex VAT</b> — energy-related charge only, excluding VAT (DKK/year).<br>
+                <b>Subscription (abo) ex VAT</b> — fixed annual subscription, excluding VAT (DKK/year).<br>
                 <b>øre/kWh</b> — volumetric charge expressed per kWh (øre = 0.01 DKK), method A equal-hour profile.</span>
             </span>
           </div>
@@ -33700,14 +33712,20 @@
         'Embedded tariff or map data was not found in this file.';
       return;
     }
+    // Denmark incl. Bornholm (~15.2°E) with margin; panning is held inside these bounds.
+    const DK_MAX_BOUNDS = L.latLngBounds([54.2, 7.2], [58.2, 15.9]);
     const map = L.map('map', {
       zoomControl: true,
-      dragging: false,
-      scrollWheelZoom: false,
-      doubleClickZoom: false,
-      boxZoom: false,
-      keyboard: false,
-      touchZoom: false,
+      dragging: true,
+      scrollWheelZoom: true,
+      doubleClickZoom: true,
+      boxZoom: true,
+      keyboard: true,
+      touchZoom: true,
+      minZoom: 6,
+      maxZoom: 16,
+      maxBounds: DK_MAX_BOUNDS,
+      maxBoundsViscosity: 0.8,
     }).setView([56.1, 10.2], 7);
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
       attribution: 'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors',
@@ -33811,7 +33829,10 @@
 
     tariffs.classes.forEach(c => {
       const opt = document.createElement('option');
-      opt.value = c; opt.textContent = c;
+      opt.value = c;
+      opt.textContent = KWH_ASSUMPTIONS[c]
+        ? c + ' · ' + KWH_ASSUMPTIONS[c].toLocaleString('en-GB') + ' kWh/year'
+        : c;
       if (c === 'B lav') opt.selected = true;
       classSelect.appendChild(opt);
     });
@@ -33839,7 +33860,7 @@
       if (s === 'abo_only') return 'Subscription only (no volumetric)';
       if (s === 'nettarif_only') return 'Volumetric only (no subscription)';
       const partial = s.match(/^partial_coverage_missing_(\d+)h$/i);
-      if (partial) return 'Partial hour coverage (missing ' + Number(partial[1]).toLocaleString('en-GB') + ' h)';
+      if (partial) return 'Partial hour coverage (missing ' + Number(partial[1]).toLocaleString('en-GB') + ' hours)';
       const cat = s.match(/^catalogue_but_no_(\d{4})_price$/i);
       if (cat) return 'In catalogue but no prices for ' + cat[1];
       // Sanitizer: never surface raw api_required / no_eds_* / similar machine codes in chrome.
@@ -33900,7 +33921,7 @@
           <span class="lab">${esc(h.short)}</span>
           <button type="button" class="what" aria-expanded="false" aria-controls="${explainId}" data-metric-tip>What is this?</button>
         </div>
-        <span class="num">${fmt(value)}</span>
+        <span class="num">${esc(fmtU(value, unitFor(metricId)))}</span>
         <div class="metric-explain" id="${explainId}">${metricHelpHtml(metricId, className)}</div>
       </div>`;
     }
@@ -34214,6 +34235,20 @@
       return Number(v).toLocaleString('da-DK', { maximumFractionDigits: 2 });
     }
 
+    /** Unit string for a metric id (METRIC_HELP first, then tariffs.json metric meta). */
+    function unitFor(metricId) {
+      const h = METRIC_HELP[metricId];
+      if (h && h.unit) return h.unit;
+      const m = (tariffs.metrics || []).find(x => x.id === metricId);
+      return (m && m.unit) || '';
+    }
+
+    /** Value + unit (non-breaking space). Missing values stay a bare dash. */
+    function fmtU(v, unit) {
+      if (v === null || v === undefined) return '—';
+      return unit ? fmt(v) + '\u00a0' + unit : fmt(v);
+    }
+
     /** Legend labels: whole numbers (DKK or øre), no long decimals. */
     function fmtLegend(v) {
       if (v === null || v === undefined || Number.isNaN(Number(v))) return '—';
@@ -34427,7 +34462,7 @@
         if (r.v !== null && vmax !== null && r.v === vmax && vmax !== vmin) tag = '<span class="max"> max</span>';
         table += `<tr>
           <td><div class="name-cell"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:${stroke};flex-shrink:0"></span>${esc(r.name)}</div></td>
-          <td>${fmt(r.v)}${unit ? ` <span style="color:var(--muted);font-size:0.7rem">${esc(unit)}</span>` : ''}${tag}</td>
+          <td>${fmt(r.v)}${(unit && r.v !== null && r.v !== undefined) ? `\u00a0<span style="color:var(--muted);font-size:0.7rem">${esc(unit)}</span>` : ''}${tag}</td>
           <td><div class="spark"><span style="width:${pct}%;background:${stroke}"></span></div></td>
           <td><button type="button" class="x" data-rm-compare="${esc(r.jk)}" style="border:1px solid #3d5370;background:#243049;color:var(--text);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:0.7rem">Remove</button></td>
         </tr>`;
@@ -34445,12 +34480,12 @@
         const present = vals.filter(v => v !== null);
         const mn = present.length ? Math.min(...present) : null;
         const mx = present.length ? Math.max(...present) : null;
-        snap += `<tr><td>${esc(h ? h.short : mid)}</td>`;
+        snap += `<tr><td>${esc(h ? h.short : mid)} <span style="color:var(--muted);font-size:0.7rem">(${esc(unitFor(mid))})</span></td>`;
         vals.forEach(v => {
           let clsN = '';
           if (v !== null && mn !== null && v === mn && mx !== mn) clsN = 'min';
           if (v !== null && mx !== null && v === mx && mx !== mn) clsN = 'max';
-          snap += `<td class="${clsN}">${fmt(v)}</td>`;
+          snap += `<td class="${clsN}">${esc(fmtU(v, unitFor(mid)))}</td>`;
         });
         snap += '</tr>';
       });
@@ -34669,7 +34704,7 @@
         cards += `<div class="class-card${sel ? ' sel' : ''}" data-cls="${esc(cls)}">
           <div class="class-card-h">
             <span class="cls-name">${esc(cls)}${sel ? ' · map metric' : ''}</span>
-            <span class="cls-kwh">${kwh ? kwh.toLocaleString('en-GB') + ' kWh/yr' : ''}</span>
+            <span class="cls-kwh">${kwh ? kwh.toLocaleString('en-GB') + ' kWh/year' : ''}</span>
           </div>
           <div class="class-metrics">${cells}</div>
         </div>`;
@@ -34764,6 +34799,7 @@
       if (legendCtrl) { map.removeControl(legendCtrl); legendCtrl = null; }
       const meta = metricMeta();
       const unit = (meta && meta.unit) ? ` (${meta.unit})` : '';
+      const u = (meta && meta.unit) ? '\u00a0' + esc(meta.unit) : '';
       legendCtrl = L.control({ position: 'bottomright' });
       legendCtrl.onAdd = function () {
         const div = L.DomUtil.create('div', 'legend');
@@ -34775,8 +34811,8 @@
             const from = breaks[Math.min(i, breaks.length - 1)];
             const to = breaks[Math.min(i + 1, breaks.length - 1)];
             const label = i === COLORS.length - 1
-              ? `≥ ${fmtLegend(from)}`
-              : `${fmtLegend(from)} – ${fmtLegend(to)}`;
+              ? `≥ ${fmtLegend(from)}${u}`
+              : `${fmtLegend(from)} – ${fmtLegend(to)}${u}`;
             html += `<div><i style="background:${COLORS[i]}"></i> ${label}</div>`;
           }
           html += `<div style="margin-top:6px;color:#9aa8bc">Nice round colour bins${esc(unit)}; cell values stay exact. Grey = no usable data</div>`;
@@ -34822,7 +34858,95 @@
       };
     }
 
+    /* View controls: fullscreen toggle + reset view. Zoom/pan are free; the view is only
+       reset on first load or via the Reset view button (never on refresh/clicks). */
+    let initialFitDone = false;
+    let userMovedView = false;
+    let programmaticView = false;
+    map.on('dragstart zoomstart', () => { if (initialFitDone && !programmaticView) userMovedView = true; });
+    const mapWrap = document.getElementById('map-wrap');
+    function fsElement() {
+      return document.fullscreenElement || document.webkitFullscreenElement || null;
+    }
+    function fsSupported() {
+      return !!(mapWrap.requestFullscreen || mapWrap.webkitRequestFullscreen);
+    }
+    function isFullscreen() {
+      return fsElement() === mapWrap || mapWrap.classList.contains('pseudo-fs');
+    }
+    function afterFsChange() {
+      setTimeout(() => {
+        map.invalidateSize({ animate: false });
+        if (!userMovedView) fitDenmark();
+        syncFsButton();
+      }, 60);
+    }
+    function toggleFullscreen() {
+      if (isFullscreen()) {
+        if (fsElement()) {
+          (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+        } else {
+          mapWrap.classList.remove('pseudo-fs');
+          afterFsChange();
+        }
+        return;
+      }
+      if (fsSupported()) {
+        const req = mapWrap.requestFullscreen || mapWrap.webkitRequestFullscreen;
+        const r = req.call(mapWrap);
+        if (r && r.catch) r.catch(() => { mapWrap.classList.add('pseudo-fs'); afterFsChange(); });
+      } else {
+        // e.g. iPhone Safari: no element fullscreen — fill the viewport instead.
+        mapWrap.classList.add('pseudo-fs');
+        afterFsChange();
+      }
+    }
+    document.addEventListener('fullscreenchange', afterFsChange);
+    document.addEventListener('webkitfullscreenchange', afterFsChange);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mapWrap.classList.contains('pseudo-fs')) {
+        mapWrap.classList.remove('pseudo-fs');
+        afterFsChange();
+      }
+    });
+    let fsBtn = null;
+    function syncFsButton() {
+      if (!fsBtn) return;
+      const on = isFullscreen();
+      fsBtn.textContent = on ? '⤡' : '⛶';
+      fsBtn.title = on ? 'Exit fullscreen (Esc)' : 'Fullscreen';
+      fsBtn.setAttribute('aria-label', fsBtn.title);
+    }
+    function resetView() {
+      userMovedView = false;
+      fitDenmark();
+    }
+    const viewCtrl = L.control({ position: 'topleft' });
+    viewCtrl.onAdd = function () {
+      const div = L.DomUtil.create('div', 'leaflet-bar view-ctrl');
+      fsBtn = L.DomUtil.create('a', 'fs-btn', div);
+      fsBtn.href = '#'; fsBtn.setAttribute('role', 'button'); fsBtn.id = 'btnFullscreen';
+      const rv = L.DomUtil.create('a', 'reset-btn', div);
+      rv.href = '#'; rv.setAttribute('role', 'button'); rv.id = 'btnResetView';
+      rv.textContent = '⟲'; rv.title = 'Reset view (Denmark)'; rv.setAttribute('aria-label', rv.title);
+      L.DomEvent.disableClickPropagation(div);
+      L.DomEvent.on(fsBtn, 'click', (e) => { L.DomEvent.preventDefault(e); toggleFullscreen(); });
+      L.DomEvent.on(rv, 'click', (e) => { L.DomEvent.preventDefault(e); resetView(); });
+      syncFsButton();
+      return div;
+    };
+    viewCtrl.addTo(map);
+
     function fitDenmark() {
+      programmaticView = true;
+      try {
+        fitDenmarkInner();
+      } finally {
+        setTimeout(() => { programmaticView = false; }, 0);
+      }
+    }
+
+    function fitDenmarkInner() {
       if (denmarkBounds && denmarkBounds.isValid && denmarkBounds.isValid()) {
         map.fitBounds(denmarkBounds, { padding: [28, 28], animate: false });
       } else if (geoLayer) {
@@ -34880,7 +35004,11 @@
       if (b && b.isValid()) {
         denmarkBounds = b;
       }
-      fitDenmark();
+      // Only fit on first paint; afterwards keep the user's zoom/pan (Reset view button refits).
+      if (!initialFitDone) {
+        fitDenmark();
+        initialFitDone = true;
+      }
       renderLegend(breaks);
       updateGeoDisclaimer();
     }
@@ -34932,7 +35060,7 @@
         div.innerHTML = `
           <input type="checkbox" class="cmp" ${compared ? 'checked' : ''} ${(!compared && compareKeys.length >= COMPARE_MAX) ? 'disabled' : ''} aria-label="Compare ${esc(name)}" />
           <div class="name">${esc(name)}${badge}</div>
-          <div class="val">${fmt(v)}</div>
+          <div class="val">${esc(fmtU(v, unitFor(metricSelect.value)))}</div>
           <div class="bar"><span style="width:${pct}%"></span></div>`;
         const cb = div.querySelector('.cmp');
         cb.addEventListener('click', (e) => {
@@ -35027,16 +35155,16 @@
         ${geoNote}<br>
         <b>Period:</b> ${rangeLabel()} (${yr.length} year${yr.length === 1 ? '' : 's'}). Values shown are <b>averages</b> of usable years only.<br>
         <b>${withData}</b> DSOs with usable ${esc(classSelect.value)} / ${esc(metricMeta().label)}
-        (assumed ${kwh ? kwh.toLocaleString('en-GB') : '?'} kWh/yr).<br>
+        (assumed ${kwh ? kwh.toLocaleString('en-GB') : '?'} kWh/year).<br>
         Unmatched (no polygon): ${unmatched ? esc(tariffs.unmatched_owners.join(', ')) : 'none'}.<br>
-        Compare: ${compareKeys.length}/${COMPARE_MAX} selected.
+        Compare: ${compareKeys.length}/${COMPARE_MAX} DSOs selected.
         ${caveatHtml}
         <hr style="border:none;border-top:1px solid #334663;margin:8px 0">
         <b>Averaging rule</b><br>
         • <b>Volumetric / øre/kWh</b>: include year if value is non-null and prices exist in Datahub for that year (partial hour coverage is included).<br>
         • <b>Netpris incl. VAT</b>: include year if value &gt; 0 and prices exist in Datahub.<br>
         • <b>Subscription (abo) ex VAT</b>: include year if non-null; skip empty subscription codes unless a positive amount exists.<br>
-        Map is fixed (Denmark overview). Internet needed for map tiles.
+        Scroll or +/− to zoom, drag to pan; ⟲ resets to Denmark, ⛶ toggles fullscreen. Internet needed for map tiles.
       `;
     }
 
@@ -35065,7 +35193,7 @@
 
     window.addEventListener('resize', () => {
       map.invalidateSize({ animate: false });
-      fitDenmark();
+      if (!userMovedView) fitDenmark();
     });
 
     refresh();
