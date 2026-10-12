@@ -64571,7 +64571,7 @@
   "Open-ended current rows (Datahub shows them running to the end of the DSO's filing horizon) are not 2027 filings.",
   "Rows that only repeat 2026 prices in Datahub's rolling weekday/weekend calendar into early 2027 (e.g. Cerius, Radius, FLOW) are not 2027 filings.",
   "A code counts as filed if its 2027 rows cover the whole of 2027 or carry a new price starting in 2027.",
-  "Netpris is shown only when every component (kWh tariff, overlying-net tariff where the DSO bills one, subscription) is filed; otherwise only the filed components are shown, with a note.",
+  "Netpris is shown, coloured and ranked only when every component (kWh tariff, overlying-net tariff where the DSO bills one, subscription) is filed for the whole of 2027. Otherwise the DSO is listed as partly filed, with each filed component's dates and rates, and no annual total.",
   "Same engine and method as 2014–2026: equal-hour profile, rådighedstarif excluded, overlying-net tariff included and shown separately, 'time' product preferred where time and flex coexist.",
   "DSOs can revise filings until the tariffs take effect; the layer is rebuilt every Monday."
  ],
@@ -64604,6 +64604,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -64615,14 +64616,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -64657,6 +64664,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -64668,14 +64676,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -64729,6 +64743,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -64740,14 +64755,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -64782,6 +64803,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -64793,14 +64815,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -64835,6 +64863,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -64846,14 +64875,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -64888,6 +64923,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -64899,14 +64935,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -64941,6 +64983,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -64952,14 +64995,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -65426,6 +65475,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -65437,14 +65487,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -65479,6 +65535,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -65490,14 +65547,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -65532,6 +65595,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -65543,14 +65607,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -65585,6 +65655,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -65596,14 +65667,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -65638,6 +65715,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -65649,14 +65727,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -65722,6 +65806,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -65733,14 +65818,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -65775,6 +65866,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -65786,14 +65878,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -65828,6 +65926,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -65839,14 +65938,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -65904,6 +66009,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -65915,14 +66021,20 @@
         "to": "2027-12-31",
         "hours": 8760,
         "full_year": true,
-        "codes": "62:8760"
+        "codes": "62:8760",
+        "days": 365,
+        "local_ore_per_kwh_filed_period": 1.711,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -65930,7 +66042,7 @@
         "codes": null
        }
       },
-      "note": "kWh tariff filed for all of 2027; subscription not yet filed; Netpris not shown until all components are filed."
+      "note": "kWh tariff filed for all of 2027; subscription not yet filed; no 2027 total until every component is filed for the whole year (part-year filings are not annualised)."
      },
      "change_vs_2026_pct": {
       "volumetric_ex_vat": 16.4,
@@ -65962,6 +66074,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -65973,14 +66086,20 @@
         "to": "2027-12-31",
         "hours": 8760,
         "full_year": true,
-        "codes": "61:8760"
+        "codes": "61:8760",
+        "days": 365,
+        "local_ore_per_kwh_filed_period": 9.2007,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -65988,7 +66107,7 @@
         "codes": null
        }
       },
-      "note": "kWh tariff filed for all of 2027; subscription not yet filed; Netpris not shown until all components are filed."
+      "note": "kWh tariff filed for all of 2027; subscription not yet filed; no 2027 total until every component is filed for the whole year (part-year filings are not annualised)."
      },
      "change_vs_2026_pct": {
       "volumetric_ex_vat": 27.1,
@@ -66020,6 +66139,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -66031,14 +66151,20 @@
         "to": "2027-12-31",
         "hours": 8760,
         "full_year": true,
-        "codes": "48:8760"
+        "codes": "48:8760",
+        "days": 365,
+        "local_ore_per_kwh_filed_period": 11.2847,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -66046,7 +66172,7 @@
         "codes": null
        }
       },
-      "note": "kWh tariff filed for all of 2027; subscription not yet filed; Netpris not shown until all components are filed."
+      "note": "kWh tariff filed for all of 2027; subscription not yet filed; no 2027 total until every component is filed for the whole year (part-year filings are not annualised)."
      },
      "change_vs_2026_pct": {
       "volumetric_ex_vat": 39.8,
@@ -66078,6 +66204,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -66089,14 +66216,20 @@
         "to": "2027-12-31",
         "hours": 8760,
         "full_year": true,
-        "codes": "47:8760"
+        "codes": "47:8760",
+        "days": 365,
+        "local_ore_per_kwh_filed_period": 25.2706,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -66104,7 +66237,7 @@
         "codes": null
        }
       },
-      "note": "kWh tariff filed for all of 2027; subscription not yet filed; Netpris not shown until all components are filed."
+      "note": "kWh tariff filed for all of 2027; subscription not yet filed; no 2027 total until every component is filed for the whole year (part-year filings are not annualised)."
      },
      "change_vs_2026_pct": {
       "volumetric_ex_vat": 30.9,
@@ -66136,6 +66269,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -66147,14 +66281,20 @@
         "to": "2027-12-31",
         "hours": 8760,
         "full_year": true,
-        "codes": "46:8760"
+        "codes": "46:8760",
+        "days": 365,
+        "local_ore_per_kwh_filed_period": 36.8871,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -66162,7 +66302,7 @@
         "codes": null
        }
       },
-      "note": "kWh tariff filed for all of 2027; subscription not yet filed; Netpris not shown until all components are filed."
+      "note": "kWh tariff filed for all of 2027; subscription not yet filed; no 2027 total until every component is filed for the whole year (part-year filings are not annualised)."
      },
      "change_vs_2026_pct": {
       "volumetric_ex_vat": 30.9,
@@ -66539,6 +66679,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -66550,14 +66691,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -66592,6 +66739,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -66603,14 +66751,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -66645,6 +66799,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -66656,14 +66811,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -66721,6 +66882,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -66732,14 +66894,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -66774,6 +66942,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -66785,14 +66954,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -66827,6 +67002,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -66838,14 +67014,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -66880,6 +67062,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -66891,14 +67074,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -66933,6 +67122,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -66944,14 +67134,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -67017,6 +67213,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -67028,14 +67225,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -67070,6 +67273,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -67081,14 +67285,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -67123,6 +67333,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -67134,14 +67345,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -67176,6 +67393,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -67187,14 +67405,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -67627,6 +67851,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -67638,14 +67863,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -67680,6 +67911,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -67691,14 +67923,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -67733,6 +67971,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -67744,14 +67983,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -67809,6 +68054,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -67820,14 +68066,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -67862,6 +68114,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -67873,14 +68126,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -67915,6 +68174,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -67926,14 +68186,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -67968,6 +68234,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -67979,14 +68246,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -68021,6 +68294,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -68032,14 +68306,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -68105,6 +68385,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -68116,14 +68397,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -68158,6 +68445,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -68169,14 +68457,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -68230,6 +68524,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -68241,14 +68536,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -68283,6 +68584,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -68294,14 +68596,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -68355,6 +68663,7 @@
      "abo_codes": "IEV-E-505:12",
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -68366,14 +68675,20 @@
         "to": "2027-12-31",
         "hours": 8760,
         "full_year": true,
-        "codes": "IEV-NT-06:8760"
+        "codes": "IEV-NT-06:8760",
+        "days": 365,
+        "local_ore_per_kwh_filed_period": 7.67,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": true,
         "months": 12,
         "full_year": true,
-        "codes": "IEV-E-505:12"
+        "codes": "IEV-E-505:12",
+        "from_month": 1,
+        "to_month": 12,
+        "dkk_per_month_ex_vat": 168.0
        },
        "overlying_net": {
         "required": true,
@@ -68381,7 +68696,7 @@
         "codes": null
        }
       },
-      "note": "kWh tariff filed for all of 2027; overlying-net tariff not yet filed; subscription filed for all 12 months; Netpris not shown until all components are filed."
+      "note": "kWh tariff filed for all of 2027; overlying-net tariff not yet filed; subscription filed for all 12 months; no 2027 total until every component is filed for the whole year (part-year filings are not annualised)."
      },
      "change_vs_2026_pct": {
       "local_ore_per_kwh": -0.9,
@@ -68412,6 +68727,7 @@
      "abo_codes": "IEV-E-503:12",
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -68423,14 +68739,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": true,
         "months": 12,
         "full_year": true,
-        "codes": "IEV-E-503:12"
+        "codes": "IEV-E-503:12",
+        "from_month": 1,
+        "to_month": 12,
+        "dkk_per_month_ex_vat": 43.0
        },
        "overlying_net": {
         "required": true,
@@ -68438,7 +68760,7 @@
         "codes": null
        }
       },
-      "note": "kWh tariff not yet filed; overlying-net tariff not yet filed; subscription filed for all 12 months; Netpris not shown until all components are filed."
+      "note": "kWh tariff not yet filed; overlying-net tariff not yet filed; subscription filed for all 12 months; no 2027 total until every component is filed for the whole year (part-year filings are not annualised)."
      },
      "change_vs_2026_pct": {
       "abo_ex_vat": 0.4
@@ -68467,6 +68789,7 @@
      "abo_codes": "IEV-E-50:12",
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -68478,14 +68801,20 @@
         "to": "2027-12-31",
         "hours": 8760,
         "full_year": true,
-        "codes": "IEV-NT-05:8760"
+        "codes": "IEV-NT-05:8760",
+        "days": 365,
+        "local_ore_per_kwh_filed_period": 22.8,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": true,
         "months": 12,
         "full_year": true,
-        "codes": "IEV-E-50:12"
+        "codes": "IEV-E-50:12",
+        "from_month": 1,
+        "to_month": 12,
+        "dkk_per_month_ex_vat": 43.0
        },
        "overlying_net": {
         "required": true,
@@ -68493,7 +68822,7 @@
         "codes": null
        }
       },
-      "note": "kWh tariff filed for all of 2027; overlying-net tariff not yet filed; subscription filed for all 12 months; Netpris not shown until all components are filed."
+      "note": "kWh tariff filed for all of 2027; overlying-net tariff not yet filed; subscription filed for all 12 months; no 2027 total until every component is filed for the whole year (part-year filings are not annualised)."
      },
      "change_vs_2026_pct": {
       "local_ore_per_kwh": -0.1,
@@ -68694,6 +69023,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -68705,14 +69035,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -68747,6 +69083,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -68758,14 +69095,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -68800,6 +69143,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -68811,14 +69155,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -68853,6 +69203,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -68864,14 +69215,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -68906,6 +69263,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -68917,14 +69275,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -68990,6 +69354,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -69001,14 +69366,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -69043,6 +69414,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -69054,14 +69426,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -69096,6 +69474,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -69107,14 +69486,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -69149,6 +69534,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -69160,14 +69546,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -69202,6 +69594,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -69213,14 +69606,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -69286,6 +69685,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -69297,14 +69697,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": false,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -69339,6 +69745,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -69350,14 +69757,20 @@
         "to": "2027-12-31",
         "hours": 8760,
         "full_year": true,
-        "codes": "43130:8760"
+        "codes": "43130:8760",
+        "days": 365,
+        "local_ore_per_kwh_filed_period": 18.904,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -69365,7 +69778,7 @@
         "codes": null
        }
       },
-      "note": "kWh tariff filed for all of 2027; overlying-net tariff not yet filed; subscription not yet filed; Netpris not shown until all components are filed; Shown as filed in Datahub: code 43120 'Nettarif B lav' 10.82 øre/kWh and 43130 'Nettarif B høj' 18.90 øre/kWh (ex VAT). B høj above B lav reverses 2016–2026 (2026: B lav 22.47, B høj 12.59 øre/kWh in Datahub, matching Læsø's published 2026 price sheet). Læsø had not published a 2027 price sheet on 9 Oct 2026, so a possible swap of the two classes cannot be confirmed; Læsø has 7 B-lav and 1 B-høj customer (Forsyningstilsynet, Apr 2026)."
+      "note": "kWh tariff filed for all of 2027; overlying-net tariff not yet filed; subscription not yet filed; no 2027 total until every component is filed for the whole year (part-year filings are not annualised); Shown as filed in Datahub: code 43120 'Nettarif B lav' 10.82 øre/kWh and 43130 'Nettarif B høj' 18.90 øre/kWh (ex VAT). B høj above B lav reverses 2016–2026 (2026: B lav 22.47, B høj 12.59 øre/kWh in Datahub, matching Læsø's published 2026 price sheet). Læsø had not published a 2027 price sheet on 9 Oct 2026, so a possible swap of the two classes cannot be confirmed; Læsø has 7 B-lav and 1 B-høj customer (Forsyningstilsynet, Apr 2026)."
      },
      "change_vs_2026_pct": {
       "local_ore_per_kwh": 50.2,
@@ -69395,6 +69808,7 @@
      "abo_codes": "41120:12",
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -69406,14 +69820,20 @@
         "to": "2027-12-31",
         "hours": 8760,
         "full_year": true,
-        "codes": "43120:8760"
+        "codes": "43120:8760",
+        "days": 365,
+        "local_ore_per_kwh_filed_period": 10.824,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": true,
         "months": 12,
         "full_year": true,
-        "codes": "41120:12"
+        "codes": "41120:12",
+        "from_month": 1,
+        "to_month": 12,
+        "dkk_per_month_ex_vat": 72.0
        },
        "overlying_net": {
         "required": true,
@@ -69421,7 +69841,7 @@
         "codes": null
        }
       },
-      "note": "kWh tariff filed for all of 2027; overlying-net tariff not yet filed; subscription filed for all 12 months; Netpris not shown until all components are filed; Shown as filed in Datahub: code 43120 'Nettarif B lav' 10.82 øre/kWh and 43130 'Nettarif B høj' 18.90 øre/kWh (ex VAT). B høj above B lav reverses 2016–2026 (2026: B lav 22.47, B høj 12.59 øre/kWh in Datahub, matching Læsø's published 2026 price sheet). Læsø had not published a 2027 price sheet on 9 Oct 2026, so a possible swap of the two classes cannot be confirmed; Læsø has 7 B-lav and 1 B-høj customer (Forsyningstilsynet, Apr 2026)."
+      "note": "kWh tariff filed for all of 2027; overlying-net tariff not yet filed; subscription filed for all 12 months; no 2027 total until every component is filed for the whole year (part-year filings are not annualised); Shown as filed in Datahub: code 43120 'Nettarif B lav' 10.82 øre/kWh and 43130 'Nettarif B høj' 18.90 øre/kWh (ex VAT). B høj above B lav reverses 2016–2026 (2026: B lav 22.47, B høj 12.59 øre/kWh in Datahub, matching Læsø's published 2026 price sheet). Læsø had not published a 2027 price sheet on 9 Oct 2026, so a possible swap of the two classes cannot be confirmed; Læsø has 7 B-lav and 1 B-høj customer (Forsyningstilsynet, Apr 2026)."
      },
      "change_vs_2026_pct": {
       "local_ore_per_kwh": -51.8,
@@ -69452,6 +69872,7 @@
      "abo_codes": "41100:12",
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -69463,14 +69884,20 @@
         "to": "2027-12-31",
         "hours": 8760,
         "full_year": true,
-        "codes": "43100:8760"
+        "codes": "43100:8760",
+        "days": 365,
+        "local_ore_per_kwh_filed_period": 33.36,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": true,
         "months": 12,
         "full_year": true,
-        "codes": "41100:12"
+        "codes": "41100:12",
+        "from_month": 1,
+        "to_month": 12,
+        "dkk_per_month_ex_vat": 57.33
        },
        "overlying_net": {
         "required": true,
@@ -69478,7 +69905,7 @@
         "codes": null
        }
       },
-      "note": "kWh tariff filed for all of 2027; overlying-net tariff not yet filed; subscription filed for all 12 months; Netpris not shown until all components are filed."
+      "note": "kWh tariff filed for all of 2027; overlying-net tariff not yet filed; subscription filed for all 12 months; no 2027 total until every component is filed for the whole year (part-year filings are not annualised)."
      },
      "change_vs_2026_pct": {
       "local_ore_per_kwh": -7.0,
@@ -69638,6 +70065,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -69649,14 +70077,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -69691,6 +70125,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -69702,14 +70137,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -69763,6 +70204,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -69774,14 +70216,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -69816,6 +70264,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -69827,14 +70276,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -69869,6 +70324,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -69880,14 +70336,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -69922,6 +70384,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -69933,14 +70396,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -69975,6 +70444,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -69986,14 +70456,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -70059,6 +70535,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -70070,14 +70547,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -70112,6 +70595,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -70123,14 +70607,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -70165,6 +70655,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -70176,14 +70667,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -70218,6 +70715,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -70229,14 +70727,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -70271,6 +70775,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -70282,14 +70787,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -70355,6 +70866,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -70366,14 +70878,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -70408,6 +70926,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -70419,14 +70938,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -70461,6 +70986,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -70472,14 +70998,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -70514,6 +71046,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -70525,14 +71058,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -70567,6 +71106,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -70578,14 +71118,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -70651,6 +71197,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -70662,14 +71209,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -70704,6 +71257,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -70715,14 +71269,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -70757,6 +71317,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -70768,14 +71329,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -70810,6 +71377,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -70821,14 +71389,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -70863,6 +71437,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -70874,14 +71449,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -70947,6 +71528,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -70958,14 +71540,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -71000,6 +71588,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -71011,14 +71600,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -71053,6 +71648,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -71064,14 +71660,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -71106,6 +71708,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -71117,14 +71720,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -71159,6 +71768,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -71170,14 +71780,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -71644,6 +72260,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -71655,14 +72272,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -71697,6 +72320,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -71708,14 +72332,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -71750,6 +72380,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -71761,14 +72392,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -71803,6 +72440,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -71814,14 +72452,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -71883,6 +72527,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -71894,14 +72539,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -71936,6 +72587,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -71947,14 +72599,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -71998,29 +72656,30 @@
    "classes": {
     "A høj": {
      "annual_kwh": 10000000.0,
-     "Netpris_ex_vat": 1272.15,
-     "Netpris_inc_vat": 1590.19,
-     "volumetric_ex_vat": 943.15,
-     "abo_ex_vat": 329.0,
-     "ore_per_kwh": 3.4425,
-     "volumetric_local_ex_vat": 943.15,
-     "local_ore_per_kwh": 3.4425,
+     "Netpris_ex_vat": null,
+     "Netpris_inc_vat": null,
+     "volumetric_ex_vat": null,
+     "abo_ex_vat": null,
+     "ore_per_kwh": null,
+     "volumetric_local_ex_vat": null,
+     "local_ore_per_kwh": null,
      "upstream_ex_vat": null,
      "upstream_ore_per_kwh": null,
      "upstream_included": false,
      "status_vol": "partial_coverage_missing_8736h",
      "status_abo": "partial_months_1_of_12",
-     "coverage": "filed_complete",
+     "coverage": "filed_partial",
      "source_owner": "TREFOR El-net A/S",
      "vol_from": "2027-01-01",
      "vol_to": "2027-01-01",
      "abo_months": 1,
      "vol_codes": "AH:24",
      "abo_codes": "E-78:1",
-     "part_year": true,
-     "part_year_label": "kWh tariff filed for 1 Jan 2027–1 Jan 2027 only; subscription filed for 1 of 12 months; part year – values cover only the filed period (not annualised)",
+     "part_year": false,
+     "part_year_label": null,
+     "partial_coverage": true,
      "filed2027": {
-      "complete": true,
+      "complete": false,
       "full_year": false,
       "any_filed": true,
       "components": {
@@ -72030,14 +72689,20 @@
         "to": "2027-01-01",
         "hours": 24,
         "full_year": false,
-        "codes": "AH:24"
+        "codes": "AH:24",
+        "days": 1,
+        "local_ore_per_kwh_filed_period": 3.4425,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": true,
         "months": 1,
         "full_year": false,
-        "codes": "E-78:1"
+        "codes": "E-78:1",
+        "from_month": 1,
+        "to_month": 1,
+        "dkk_per_month_ex_vat": 329.0
        },
        "overlying_net": {
         "required": false,
@@ -72045,35 +72710,36 @@
         "codes": null
        }
       },
-      "note": "kWh tariff filed for 1 Jan 2027–1 Jan 2027 only; subscription filed for 1 of 12 months; part year – values cover only the filed period (not annualised)."
+      "note": "kWh tariff filed for 1 Jan 2027 only (1 of 365 days): 3.44 øre/kWh ex VAT average over those days; subscription filed for Jan 2027 only (1 of 12 months): 329.00 DKK/month ex VAT; no 2027 total until every component is filed for the whole year (part-year filings are not annualised)."
      },
      "change_vs_2026_pct": {}
     },
     "A lav": {
      "annual_kwh": 2000000.0,
-     "Netpris_ex_vat": 506.63,
-     "Netpris_inc_vat": 633.29,
-     "volumetric_ex_vat": 188.63,
-     "abo_ex_vat": 318.0,
-     "ore_per_kwh": 3.4425,
-     "volumetric_local_ex_vat": 188.63,
-     "local_ore_per_kwh": 3.4425,
+     "Netpris_ex_vat": null,
+     "Netpris_inc_vat": null,
+     "volumetric_ex_vat": null,
+     "abo_ex_vat": null,
+     "ore_per_kwh": null,
+     "volumetric_local_ex_vat": null,
+     "local_ore_per_kwh": null,
      "upstream_ex_vat": null,
      "upstream_ore_per_kwh": null,
      "upstream_included": false,
      "status_vol": "partial_coverage_missing_8736h",
      "status_abo": "partial_months_1_of_12",
-     "coverage": "filed_complete",
+     "coverage": "filed_partial",
      "source_owner": "TREFOR El-net A/S",
      "vol_from": "2027-01-01",
      "vol_to": "2027-01-01",
      "abo_months": 1,
      "vol_codes": "AL:24",
      "abo_codes": "E-58:1",
-     "part_year": true,
-     "part_year_label": "kWh tariff filed for 1 Jan 2027–1 Jan 2027 only; subscription filed for 1 of 12 months; part year – values cover only the filed period (not annualised)",
+     "part_year": false,
+     "part_year_label": null,
+     "partial_coverage": true,
      "filed2027": {
-      "complete": true,
+      "complete": false,
       "full_year": false,
       "any_filed": true,
       "components": {
@@ -72083,14 +72749,20 @@
         "to": "2027-01-01",
         "hours": 24,
         "full_year": false,
-        "codes": "AL:24"
+        "codes": "AL:24",
+        "days": 1,
+        "local_ore_per_kwh_filed_period": 3.4425,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": true,
         "months": 1,
         "full_year": false,
-        "codes": "E-58:1"
+        "codes": "E-58:1",
+        "from_month": 1,
+        "to_month": 1,
+        "dkk_per_month_ex_vat": 318.0
        },
        "overlying_net": {
         "required": false,
@@ -72098,35 +72770,36 @@
         "codes": null
        }
       },
-      "note": "kWh tariff filed for 1 Jan 2027–1 Jan 2027 only; subscription filed for 1 of 12 months; part year – values cover only the filed period (not annualised)."
+      "note": "kWh tariff filed for 1 Jan 2027 only (1 of 365 days): 3.44 øre/kWh ex VAT average over those days; subscription filed for Jan 2027 only (1 of 12 months): 318.00 DKK/month ex VAT; no 2027 total until every component is filed for the whole year (part-year filings are not annualised)."
      },
      "change_vs_2026_pct": {}
     },
     "B høj": {
      "annual_kwh": 500000.0,
-     "Netpris_ex_vat": 395.84,
-     "Netpris_inc_vat": 494.8,
-     "volumetric_ex_vat": 77.84,
-     "abo_ex_vat": 318.0,
-     "ore_per_kwh": 5.6825,
-     "volumetric_local_ex_vat": 77.84,
-     "local_ore_per_kwh": 5.6825,
+     "Netpris_ex_vat": null,
+     "Netpris_inc_vat": null,
+     "volumetric_ex_vat": null,
+     "abo_ex_vat": null,
+     "ore_per_kwh": null,
+     "volumetric_local_ex_vat": null,
+     "local_ore_per_kwh": null,
      "upstream_ex_vat": null,
      "upstream_ore_per_kwh": null,
      "upstream_included": false,
      "status_vol": "partial_coverage_missing_8736h",
      "status_abo": "partial_months_1_of_12",
-     "coverage": "filed_complete",
+     "coverage": "filed_partial",
      "source_owner": "TREFOR El-net A/S",
      "vol_from": "2027-01-01",
      "vol_to": "2027-01-01",
      "abo_months": 1,
      "vol_codes": "BH:24",
      "abo_codes": "E-56:1",
-     "part_year": true,
-     "part_year_label": "kWh tariff filed for 1 Jan 2027–1 Jan 2027 only; subscription filed for 1 of 12 months; part year – values cover only the filed period (not annualised)",
+     "part_year": false,
+     "part_year_label": null,
+     "partial_coverage": true,
      "filed2027": {
-      "complete": true,
+      "complete": false,
       "full_year": false,
       "any_filed": true,
       "components": {
@@ -72136,14 +72809,20 @@
         "to": "2027-01-01",
         "hours": 24,
         "full_year": false,
-        "codes": "BH:24"
+        "codes": "BH:24",
+        "days": 1,
+        "local_ore_per_kwh_filed_period": 5.6825,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": true,
         "months": 1,
         "full_year": false,
-        "codes": "E-56:1"
+        "codes": "E-56:1",
+        "from_month": 1,
+        "to_month": 1,
+        "dkk_per_month_ex_vat": 318.0
        },
        "overlying_net": {
         "required": false,
@@ -72151,7 +72830,7 @@
         "codes": null
        }
       },
-      "note": "kWh tariff filed for 1 Jan 2027–1 Jan 2027 only; subscription filed for 1 of 12 months; part year – values cover only the filed period (not annualised)."
+      "note": "kWh tariff filed for 1 Jan 2027 only (1 of 365 days): 5.68 øre/kWh ex VAT average over those days; subscription filed for Jan 2027 only (1 of 12 months): 318.00 DKK/month ex VAT; no 2027 total until every component is filed for the whole year (part-year filings are not annualised)."
      },
      "change_vs_2026_pct": {}
     },
@@ -72159,11 +72838,11 @@
      "annual_kwh": 100000.0,
      "Netpris_ex_vat": null,
      "Netpris_inc_vat": null,
-     "volumetric_ex_vat": 29.43,
+     "volumetric_ex_vat": null,
      "abo_ex_vat": null,
-     "ore_per_kwh": 10.7425,
-     "volumetric_local_ex_vat": 29.43,
-     "local_ore_per_kwh": 10.7425,
+     "ore_per_kwh": null,
+     "volumetric_local_ex_vat": null,
+     "local_ore_per_kwh": null,
      "upstream_ex_vat": null,
      "upstream_ore_per_kwh": null,
      "upstream_included": false,
@@ -72178,6 +72857,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": true,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -72189,14 +72869,20 @@
         "to": "2027-01-01",
         "hours": 24,
         "full_year": false,
-        "codes": "BL:24"
+        "codes": "BL:24",
+        "days": 1,
+        "local_ore_per_kwh_filed_period": 10.7425,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -72204,35 +72890,36 @@
         "codes": null
        }
       },
-      "note": "kWh tariff filed for 1 Jan 2027–1 Jan 2027 only; subscription not yet filed; Netpris not shown until all components are filed."
+      "note": "kWh tariff filed for 1 Jan 2027 only (1 of 365 days): 10.74 øre/kWh ex VAT average over those days; subscription not yet filed; no 2027 total until every component is filed for the whole year (part-year filings are not annualised)."
      },
      "change_vs_2026_pct": {}
     },
     "C": {
      "annual_kwh": 4000.0,
-     "Netpris_ex_vat": 47.74,
-     "Netpris_inc_vat": 59.68,
-     "volumetric_ex_vat": 2.74,
-     "abo_ex_vat": 45.0,
-     "ore_per_kwh": 24.975,
-     "volumetric_local_ex_vat": 2.74,
-     "local_ore_per_kwh": 24.975,
+     "Netpris_ex_vat": null,
+     "Netpris_inc_vat": null,
+     "volumetric_ex_vat": null,
+     "abo_ex_vat": null,
+     "ore_per_kwh": null,
+     "volumetric_local_ex_vat": null,
+     "local_ore_per_kwh": null,
      "upstream_ex_vat": null,
      "upstream_ore_per_kwh": null,
      "upstream_included": false,
      "status_vol": "partial_coverage_missing_8736h",
      "status_abo": "partial_months_1_of_12",
-     "coverage": "filed_complete",
+     "coverage": "filed_partial",
      "source_owner": "TREFOR El-net A/S",
      "vol_from": "2027-01-01",
      "vol_to": "2027-01-01",
      "abo_months": 1,
      "vol_codes": "C:24",
      "abo_codes": "E-51:1",
-     "part_year": true,
-     "part_year_label": "kWh tariff filed for 1 Jan 2027–1 Jan 2027 only; subscription filed for 1 of 12 months; part year – values cover only the filed period (not annualised)",
+     "part_year": false,
+     "part_year_label": null,
+     "partial_coverage": true,
      "filed2027": {
-      "complete": true,
+      "complete": false,
       "full_year": false,
       "any_filed": true,
       "components": {
@@ -72242,14 +72929,20 @@
         "to": "2027-01-01",
         "hours": 24,
         "full_year": false,
-        "codes": "C:24"
+        "codes": "C:24",
+        "days": 1,
+        "local_ore_per_kwh_filed_period": 24.975,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": true,
         "months": 1,
         "full_year": false,
-        "codes": "E-51:1"
+        "codes": "E-51:1",
+        "from_month": 1,
+        "to_month": 1,
+        "dkk_per_month_ex_vat": 45.0
        },
        "overlying_net": {
         "required": false,
@@ -72257,7 +72950,7 @@
         "codes": null
        }
       },
-      "note": "kWh tariff filed for 1 Jan 2027–1 Jan 2027 only; subscription filed for 1 of 12 months; part year – values cover only the filed period (not annualised)."
+      "note": "kWh tariff filed for 1 Jan 2027 only (1 of 365 days): 24.98 øre/kWh ex VAT average over those days; subscription filed for Jan 2027 only (1 of 12 months): 45.00 DKK/month ex VAT; no 2027 total until every component is filed for the whole year (part-year filings are not annualised)."
      },
      "change_vs_2026_pct": {}
     }
@@ -72609,6 +73302,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -72620,14 +73314,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -72662,6 +73362,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -72673,14 +73374,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -72715,6 +73422,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -72726,14 +73434,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -72768,6 +73482,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -72779,14 +73494,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -72848,6 +73569,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -72859,14 +73581,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -72901,6 +73629,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -72912,14 +73641,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -72954,6 +73689,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -72965,14 +73701,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73030,6 +73772,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73041,14 +73784,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73083,6 +73832,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73094,14 +73844,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73136,6 +73892,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73147,14 +73904,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73189,6 +73952,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73200,14 +73964,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73242,6 +74012,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73253,14 +74024,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73326,6 +74103,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73337,14 +74115,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73379,6 +74163,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73390,14 +74175,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73432,6 +74223,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73443,14 +74235,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73485,6 +74283,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73496,14 +74295,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73565,6 +74370,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73576,14 +74382,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73618,6 +74430,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73629,14 +74442,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73671,6 +74490,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73682,14 +74502,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73724,6 +74550,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73735,14 +74562,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73777,6 +74610,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73788,14 +74622,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73861,6 +74701,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73872,14 +74713,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73914,6 +74761,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73925,14 +74773,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -73967,6 +74821,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -73978,14 +74833,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -74020,6 +74881,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74031,14 +74893,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -74073,6 +74941,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74084,14 +74953,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -74157,6 +75032,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74168,14 +75044,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": false,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -74210,6 +75092,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74221,14 +75104,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": true,
@@ -74282,6 +75171,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74293,14 +75183,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -74335,6 +75231,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74346,14 +75243,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -74388,6 +75291,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74399,14 +75303,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -74441,6 +75351,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74452,14 +75363,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -74494,6 +75411,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74505,14 +75423,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -74598,6 +75522,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74609,14 +75534,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -74652,6 +75583,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74663,14 +75595,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -74706,6 +75644,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74717,14 +75656,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -74760,6 +75705,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74771,14 +75717,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -74814,6 +75766,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74825,14 +75778,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -74875,6 +75834,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74886,14 +75846,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -74929,6 +75895,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74940,14 +75907,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -74983,6 +75956,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -74994,14 +75968,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75044,6 +76024,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75055,14 +76036,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75098,6 +76085,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75109,14 +76097,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75152,6 +76146,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75163,14 +76158,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75206,6 +76207,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75217,14 +76219,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75260,6 +76268,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75271,14 +76280,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75321,6 +76336,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75332,14 +76348,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75375,6 +76397,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75386,14 +76409,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75429,6 +76458,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75440,14 +76470,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75483,6 +76519,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75494,14 +76531,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75537,6 +76580,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75548,14 +76592,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75598,6 +76648,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75609,14 +76660,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75652,6 +76709,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75663,14 +76721,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75706,6 +76770,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75717,14 +76782,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75760,6 +76831,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75771,14 +76843,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75814,6 +76892,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75825,14 +76904,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75875,6 +76960,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75886,14 +76972,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75929,6 +77021,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75940,14 +77033,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -75983,6 +77082,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -75994,14 +77094,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -76037,6 +77143,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -76048,14 +77155,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -76091,6 +77204,7 @@
      "abo_codes": null,
      "part_year": false,
      "part_year_label": null,
+     "partial_coverage": false,
      "filed2027": {
       "complete": false,
       "full_year": false,
@@ -76102,14 +77216,20 @@
         "to": null,
         "hours": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "days": 0,
+        "local_ore_per_kwh_filed_period": null,
+        "upstream_ore_per_kwh_filed_period": null
        },
        "subscription": {
         "required": true,
         "filed": false,
         "months": 0,
         "full_year": false,
-        "codes": null
+        "codes": null,
+        "from_month": null,
+        "to_month": null,
+        "dkk_per_month_ex_vat": null
        },
        "overlying_net": {
         "required": false,
@@ -79278,7 +80398,7 @@
       if (filedMode()) {
         detailBody.innerHTML = `
           ${areaNotesHtml(jk)}
-          <div class="filed-banner" style="margin:0 0 8px;padding:6px 8px;border-left:3px solid #e0b84a;background:rgba(224,184,74,.08);font-size:12px;line-height:1.4"><b>${esc(FILED_LABEL)}</b> · Datahub filings as of ${esc(FILED_ASOF)}. Only components the DSO has filed for ${FILED_YEAR} are shown; Netpris appears only when every component is filed. Nothing is estimated or carried forward from ${FILED_YEAR - 1}.</div>
+          <div class="filed-banner" style="margin:0 0 8px;padding:6px 8px;border-left:3px solid #e0b84a;background:rgba(224,184,74,.08);font-size:12px;line-height:1.4"><b>${esc(FILED_LABEL)}</b> · Datahub filings as of ${esc(FILED_ASOF)}. Only components the DSO has filed for ${FILED_YEAR} are shown; Netpris appears only when every component is filed for the whole year; part-year filings are listed with their dates and rates, not annualised. Nothing is estimated or carried forward from ${FILED_YEAR - 1}.</div>
           ${cards}
           ${filedCodesHtml(owner)}
         `;
@@ -79784,7 +80904,11 @@
         const meta = metricMeta();
         let h = `<div style="font-weight:600;color:var(--text);margin-bottom:4px">Not yet filed or incomplete for ${FILED_YEAR} (${missing.length}) <span style="font-weight:400;color:#9fb3cc">· ${esc(classSelect.value)} · ${esc(meta.label)}</span></div>`;
         if (!rows.length) h = `<div style="margin-bottom:6px">No DSO has filed every part needed for <b>${esc(meta.label)}</b> (${esc(classSelect.value)}) yet.</div>` + h;
-        h += missing.map(({ o, b }) => `<div class="nf-row" data-join="${esc(o.join_key || '')}" style="padding:3px 0;cursor:pointer"><span style="display:inline-block;width:9px;height:9px;background:${NO_DATA_FILL};border-radius:2px;margin-right:6px"></span>${esc(ownerDisplayName(o))}<div style="margin-left:15px;color:#7f93ad">${esc(filedShortNote(b))}</div></div>`).join('');
+        const nfRow = ({ o, b }) => `<div class="nf-row" data-join="${esc(o.join_key || '')}" style="padding:3px 0;cursor:pointer"><span style="display:inline-block;width:9px;height:9px;background:${NO_DATA_FILL};border-radius:2px;margin-right:6px"></span>${esc(ownerDisplayName(o))}<div style="margin-left:15px;color:#7f93ad">${esc(filedShortNote(b))}</div></div>`;
+        const isPart = x => !!(x.b && x.b.filed2027 && x.b.filed2027.any_filed);
+        const part = missing.filter(isPart), nf = missing.filter(x => !isPart(x));
+        if (part.length) h += `<div style="font-weight:600;color:#e0b84a;margin:6px 0 2px">◐ Partly filed (${part.length}) – filed components with their dates and rates; no ${FILED_YEAR} total until everything covers the whole year (not annualised)</div>` + part.map(nfRow).join('');
+        if (nf.length) h += `<div style="font-weight:600;color:var(--text);margin:6px 0 2px">○ Not yet filed (${nf.length})</div>` + nf.map(nfRow).join('');
         box.innerHTML = h;
         box.querySelectorAll('.nf-row').forEach(el => {
           el.addEventListener('click', () => {
